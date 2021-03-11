@@ -4,6 +4,6 @@
     "isActive": "yes",
     "eventHandlerList": [ 
       "gmcp.room.info"
-    ],
-  },
+    ]
+  }
 ]
