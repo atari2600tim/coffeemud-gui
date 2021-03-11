@@ -1,0 +1,9 @@
+[
+  {
+    "name": "handle_room",
+    "isActive": "yes",
+    "eventHandlerList": [ 
+      "gmcp.room.info"
+    ],
+  },
+]
