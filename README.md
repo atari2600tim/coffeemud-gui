@@ -1,0 +1,2 @@
+# coffemud-mapper
+CoffeeMud mapper
