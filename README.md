@@ -1,2 +1,2 @@
 # coffemud-mapper
-CoffeeMud mapper
+I want some experience with Mudlet mapping functions before I set up mapping for The Eternal Fantasy, and I want to use GMCP for it because I'll be using that.  MarisaG on Discord had the lucky timing to ask someone to work on a mapper for CoffeeMud right as I was debating this.  So now I'm trying this out.
