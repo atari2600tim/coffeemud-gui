@@ -24,10 +24,10 @@ jobs:
           cd package
           ../muddler/muddle-shadow-0.5/bin/muddle
           cd build
-          mv tmp coffeemud-mapper
+          mv tmp coffeemud-gui
           cd ../..
       - name: 'Upload Artifact'
         uses: actions/upload-artifact@v2
         with:
-          name: coffeemud-mapper
+          name: coffeemud-gui
           path: package/build/coffeemud-mapper/
