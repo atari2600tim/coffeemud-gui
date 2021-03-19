@@ -1,9 +1,24 @@
 [
   {
-    "name": "handle_room",
+    "name": "Template",
+    "isActive": "yes",
+  },
+  {
+    "name": "SetupGUI",
+    "isActive": "yes",
+  },
+  {
+    "name": "HandleRoom",
     "isActive": "yes",
     "eventHandlerList": [ 
       "gmcp.room.info"
+    ]
+  },
+  {
+    "name": "StatusEvent",
+    "isActive": "yes",
+    "eventHandlerList": [ 
+      "gmcp.char"
     ]
   }
 ]
