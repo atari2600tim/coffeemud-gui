@@ -30,4 +30,9 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: coffeemud-gui
-          path: package/build/coffeemud-mapper/
+          path: package/build/coffeemud-gui/
+
+
+
+
+
