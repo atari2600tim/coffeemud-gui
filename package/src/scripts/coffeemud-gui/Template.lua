@@ -9,6 +9,9 @@ It came from https://forums.mudlet.org/viewtopic.php?t=4098
 --]]
 
 
+GUI = GUI or {}
+
+
 -- CSSMan by Vadi. Public domain.
 
 CSSMan = {}
