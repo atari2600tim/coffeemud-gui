@@ -17,7 +17,9 @@ function StatusEvent()
     if b.subclass then
       output = output.."<br>Subclass: "..b.subclass
     end
+    
     if(gmcp.char.worth) then output = output .. "<br>Gold: "..gmcp.char.worth.gold end
+    -- Gold seems to wrongly be set as 0 in testing.  It gave me accurate numbers before, when I was in the Mud School area.
     
     GUI.Box4:echo(output)
     output = ""
