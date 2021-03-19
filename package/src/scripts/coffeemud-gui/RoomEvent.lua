@@ -67,7 +67,7 @@ uninstallPackage("generic_mapper")
 --I had exported to a package and then imported it to other profile and added this line.
 --No problem next time.
 --Experiment some with it and see if I can repeat crash.
-
+--Also this section I should split off and put the code in the parent folder code block.  See how to structure that later.
 mudlet = mudlet or {}
 mudlet.mapper_script = true
 
