@@ -62,6 +62,12 @@ just noticed outside of room.info, what is room.enter="the tridone"?
 
 --]]
 
+uninstallPackage("generic_mapper")
+--TODO: When I first added the uninstallPackage line, it crashed Mudlet.
+--I had exported to a package and then imported it to other profile and added this line.
+--No problem next time.
+--Experiment some with it and see if I can repeat crash.
+
 mudlet = mudlet or {}
 mudlet.mapper_script = true
 
