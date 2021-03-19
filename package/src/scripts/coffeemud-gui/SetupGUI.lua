@@ -5,11 +5,6 @@ It duplicates code, but I wanted to leave the other part untouched as much as I 
 -Tim
 --]]
 
-uninstallPackage("generic_mapper")
---TODO: When I first added the uninstallPackage line, it crashed Mudlet.
---I had exported to a package and then imported it to other profile and added this line.
---No problem next time.
---Experiment some with it and see if I can repeat crash.
 
 GUI.Icon1:echo("Look")
 GUI.Icon2:echo("Score")
