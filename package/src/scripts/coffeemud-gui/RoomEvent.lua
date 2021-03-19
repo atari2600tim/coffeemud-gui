@@ -79,7 +79,7 @@ this manual offset thing will work fine with walking around the outside of walls
 but leaving the zone and then coming back is different story.
 --]]
 
-function HandleRoom()
+function RoomEvent()
 
   local function deb(msg)
     if(spam) then
