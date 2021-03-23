@@ -5,6 +5,8 @@ It duplicates code, but I wanted to leave the other part untouched as much as I 
 -Tim
 --]]
 
+uninstallPackage("generic_mapper")
+
 
 GUI.Icon1:echo("Look")
 GUI.Icon2:echo("Score")
