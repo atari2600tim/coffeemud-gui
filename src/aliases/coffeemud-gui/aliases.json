@@ -1,0 +1,6 @@
+[
+  {
+    "name": "exportxml command",
+    "regex": "^exportxml$",
+  }
+]
