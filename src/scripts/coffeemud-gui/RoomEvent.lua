@@ -58,8 +58,14 @@ divine being.",
   },
   wrongdir = "S"
 }
-just noticed outside of room.info, what is room.enter="the tridone"?
-
+just noticed outside of room.info, what is room.enter="the tridrone"?
+now enter="the rabbit"
+I guess it is notifying me as mobs enter.
+I just don't recognize "the tridrone"
+for that id "Mud School#3700"...
+I think I saw some in different format, like Name#123(1,2)
+maybe that is a virtual area or something
+anyway, the pound-number might not always be simple number
 --]]
 
 --Also this section I should split off and put the code in the parent folder code block.  See how to structure that later.
