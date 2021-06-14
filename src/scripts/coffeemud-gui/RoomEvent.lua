@@ -66,11 +66,34 @@ for that id "Mud School#3700"...
 I think I saw some in different format, like Name#123(1,2)
 maybe that is a virtual area or something
 anyway, the pound-number might not always be simple number
+
+will use terrain for environment
 --]]
 
 --Also this section I should split off and put the code in the parent folder code block.  See how to structure that later.
 mudlet = mudlet or {}
 mudlet.mapper_script = true
+
+coffeemud = coffeemud or {}
+coffeemud.terrains = coffeemud.terrains or yajl.to_value(getMapUserData("terrains") or "[]")
+if table.size(coffeemud.terrains) == 0 then
+  local ter={}
+  -- just picked some colors from lua showColors()
+  setCustomEnvColor(21, 255,165,0, 255) -- orange
+  setCustomEnvColor(22, 0, 255, 127, 255) -- SpringGreen
+  setCustomEnvColor(23, 105,105,105, 255) -- DimGray
+  setCustomEnvColor(24, 211,211,211, 255) -- LightGray
+  setCustomEnvColor(25, 46,139,87, 255) -- SeaGreen
+  setCustomEnvColor(26, 184,134,11, 255) -- DarkGoldenrod
+  ter["wooden"] = 21
+  ter["plains"] = 22
+  ter["stone"] = 23
+  ter["city"] = 24
+  ter["hills"] = 25
+  ter["woods"] = 26
+  coffeemud.terrains = ter
+  setMapUserData("terrains",yajl.to_string(ter))
+end
 
 --For manual override of 1 unit grid, put pairs of rooms into specialVectors list,
 --Key is 2 room IDs lower to higher separated by space, then values are x,y,z from first room to second
@@ -92,6 +115,31 @@ function RoomEvent()
     if(spam) then
       echo(msg)
     end
+  end
+ 
+  local function findTerrainID(tername)
+    local list = coffeemud.terrains
+    local last = 0
+deb("1")
+    for ter, id in pairs(list) do
+deb("2")
+      if ter == tername then
+deb("returning id")
+        return id
+      end
+deb("3")
+      if last < id then
+deb("3.5")
+        last = id
+      end
+deb("4")
+    end
+deb("5")
+    last = last + 1
+    list[tername] = last
+    coffeemud.terrains = list
+deb("6")
+    return last
   end
 
   local function findAreaID(areaname)
@@ -129,7 +177,13 @@ function RoomEvent()
     areaID = addAreaName(gmcp.room.info.zone)
     echo("\nALERT created area "..gmcp.room.info.zone)
   end
-  
+  deb("b")
+  deb(string.format("terrain[%s][%s]",gmcp.room.info.terrain,findTerrainID(gmcp.room.info.terrain)))
+  local envID = findTerrainID(gmcp.room.info.terrain)
+  deb("c")
+  setRoomEnv(localID,envID)
+  deb("d")
+ 
   deb("B")
   setRoomName(localID, gmcp.room.info.name)
   setRoomArea(localID, gmcp.room.info.zone)
@@ -191,6 +245,7 @@ function RoomEvent()
       deb("d")
       deb(string.format("created room %s at %s,%s,%s\n",destID,x,y,z))
       setRoomCoordinates(destID,x,y,z)
+      setRoomArea(destID, gmcp.room.info.zone) -- put destination in same area tenatively instead of default area
     end
     deb("[after if]")
     deb("\nabout to setExit, "..localID.." "..destID.." "..k)
