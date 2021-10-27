@@ -7,6 +7,13 @@ It duplicates code, but I wanted to leave the other part untouched as much as I 
 
 uninstallPackage("generic_mapper")
 
+if setDiscordGameUrl then
+  -- Mudlet 4.14+ utilizes the Discord button.
+  -- Replace this with your own game, or remove it altogether if you send it via GMCP.
+  -- CoffeeMUD as of this writing does not send the Discord GMCP message.
+  setDiscordGameUrl("https://discord.gg/HgDxtas", "CoffeeMUD") 
+end
+
 
 GUI.Icon1:echo("Look")
 GUI.Icon2:echo("Score")
