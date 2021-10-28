@@ -76,7 +76,8 @@ mudlet.mapper_script = true
 --Key is 2 room IDs lower to higher separated by space, then values are x,y,z from first room to second
 --TODO: namespace this when I'm done
 specialVectors={
-  ["12345 23456"]={10,0,0} -- just showing format
+  ["12345 23456"]={10,0,0}, -- just showing format
+  ["299884656 299884817"]={0,2,0}
 }
 --[[
 TODO: I'm not sure if this is enough now that I think of it.
@@ -84,6 +85,7 @@ What if you enter a zone and leave and come back in other part of the zone?
 Enter from the west edge of the map and leave without exploring then enter from the east edge of the map...
 this manual offset thing will work fine with walking around the outside of walls,
 but leaving the zone and then coming back is different story.
+This plus anchor points?  Just anchor points?
 --]]
 
 function RoomEvent()
@@ -114,12 +116,13 @@ function RoomEvent()
     deb("handle_room was called prior to getting room data")
     return
   end
-  local localID = getRoomIDbyHash(gmcp.room.info.num)
+  local localHash = gmcp.room.info.num
+  local localID = getRoomIDbyHash(localHash)
   deb("A")
   if localID == -1 then
     deb("creating this room that you are currently in")
     localID = createRoomID()
-    setRoomIDbyHash(localID, gmcp.room.info.num)
+    setRoomIDbyHash(localID, localHash)
     addRoom(localID)
     centerview(localID)
   end
@@ -147,6 +150,7 @@ function RoomEvent()
     --exitText = exitText..string.format("%s<br>",k)
     local specialDirection = false
     local destID = getRoomIDbyHash(v)
+    local destHash = v
     deb("[about to check if should create]")
     if destID == -1 then
       deb("[creating]");
@@ -159,7 +163,7 @@ function RoomEvent()
       deb(string.format("\nam in %s at %s,%s,%s...",localID,x,y,z))
       deb("c")
 
-      local offset = specialVectors[((localID<destID) and localID.." "..destID) or (destID.." "..localID)]
+      local offset = specialVectors[((localHash<destHash) and localHash.." "..destHash) or (destHash.." "..localHash)]
       if offset then
         deb("\nusing special override for path between "..localID.." and "..destID)
         if localID < destID then
