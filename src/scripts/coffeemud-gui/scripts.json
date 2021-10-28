@@ -20,5 +20,9 @@
     "eventHandlerList": [ 
       "gmcp.char"
     ]
+  },
+  {
+    "name": "doSpeedWalk",
+    "isActive": "yes",
   }
 ]
