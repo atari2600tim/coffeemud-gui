@@ -167,7 +167,7 @@ function RoomEvent()
         else
           x=x-offset[1] y=y-offset[2] z=z-offset[3]
         end
-        if not table.index_of(({"N","S","E","W","U","D"}), k) then
+        if not table.index_of(({"N","S","E","W","U","D","NW","NE","SW","SE"}), k) then
           specialDirection = true
         end
       elseif k=="N" then y=y+1
@@ -176,6 +176,10 @@ function RoomEvent()
       elseif k=="W" then x=x-1
       elseif k=="U" then z=z+1
       elseif k=="D" then z=z-1
+      elseif k=="NW" then y=y+1 x=x-1 -- I have not encountered diagonals yet
+      elseif k=="NE" then y=y+1 x=x+1
+      elseif k=="SW" then y=y-1 x=x-1
+      elseif k=="SE" then y=y-1 x=x+1
       elseif k=="V" then
         deb("\nIs V always a portal? Will say it is z+5")
         --TODO: Probably should skip if they are temporary
