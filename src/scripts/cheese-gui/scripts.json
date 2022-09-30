@@ -16,5 +16,12 @@
     "eventHandlerList": [ 
       "onSubmitMap"
     ]
+  },
+  {
+    "name": "pong",
+    "isActive": "yes",
+    "eventHandlerList": [ 
+      "gmcp.Core.Ping"
+    ]
   }
 ]
