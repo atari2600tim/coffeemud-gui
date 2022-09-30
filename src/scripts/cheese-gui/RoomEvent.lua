@@ -6,6 +6,7 @@ And then changed again for Cheeseworld that I'm adding room data to
 
 mudlet = mudlet or {}
 mudlet.mapper_script = true
+uninstallPackage("generic_mapper")
 
 
 function RoomEvent()
