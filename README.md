@@ -1,9 +1,6 @@
-# coffemud-gui
-I want some experience with Mudlet mapping functions before I set up mapping for The Eternal Fantasy, and I want to use GMCP for it because I'll be using that.
+# cheese-gui
+This is some initial GUI stuff for Cheeseworld, modeled after the one I made for CoffeeMUD.
 
-MarisaG on Discord had the lucky timing to ask someone to work on a mapper for CoffeeMud right as I was debating this.  So now I'm trying this out.
+It should handle the map including speedwalk, and make a right-click option for builders to submit info back to the game.
 
-It is here for my own convenience and not in any form usable really.  Currently it will build a map somewhat but spam you with debugging messages.
-
-I'll do some basic GUI but keep the mapper separate because that's really what people are interested in.
-
+Also an alias to ping.
