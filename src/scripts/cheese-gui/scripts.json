@@ -3,7 +3,7 @@
     "name": "RoomEvent",
     "isActive": "yes",
     "eventHandlerList": [ 
-      "gmcp.room"
+      "gmcp.Room"
     ]
   },
   {
